@@ -1,0 +1,26 @@
+ng new MeanFrontend
+npm install bootstrap@3 jquery --save
+
+express MeanBackend
+
+brew intall mongodb
+
+mkdir MeanMongoDB/data
+
+mongod --dbpath=MeanMongoDB/data
+
+npm install --save mongoose
+
+npm install --save mongoose-unique-validator
+
+npm install --save bcryptjs
+
+npm install --save jsonwebtoken
+
+
+不同component之间通信用emit
+
+有公用引用型数据用service
+
+公用值型数据用localStorage
+
