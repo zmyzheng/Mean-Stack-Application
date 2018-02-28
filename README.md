@@ -1,8 +1,8 @@
 # Mean-Stack-Application
 
-<strong>MEAN<sup>2</sup></strong> 
-#### The Full Stack Javascript Framework.
+<strong>MEAN<sup>2</sup>: The Full Stack Javascript Framework.</strong> 
 
+This is a simple <strong>MEAN<sup>2</sup> Stack</strong> Application Demo, which realizes user management (sign up / sign in / log out) and message management for each user (CRUD)
 
 Visit this application:
 
