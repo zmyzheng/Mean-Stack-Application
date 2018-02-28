@@ -1,14 +1,15 @@
 # Mean-Stack-Application
 
+<strong>MEAN<sup>2</sup></strong> 
 #### The Full Stack Javascript Framework.
 
-<strong>MEAN<sup>2</sup></strong> 
+
 Visit this application:
 
 https://mean-stack-deployment.herokuapp.com/
 
 
-![](MEAN Stack.png)
+![](MEAN-Stack.png)
 
 
 <strong>MEAN<sup>2</sup></strong>  started out as a combination of
@@ -20,8 +21,20 @@ https://mean-stack-deployment.herokuapp.com/
 
 ![](Architecture.png)
 
+## Run it
+
+Go to MeanFrontend directory, 
+    $ npm install
+
+    $ ng build
+
+Copy the files in MeanFrontend/dist to MeanBackend/public
+
+    $ npm install
+
+    $ npm start
 
 ## Deployment
 
-* [MLab for MOngoDB](https://mlab.com/home)
+* [MLab for MongoDB](https://mlab.com/home)
 * [Heroku](https://www.heroku.com/)
