@@ -9,7 +9,7 @@ Visit this application:
 https://mean-stack-deployment.herokuapp.com/
 
 
-<div align=center><img width="150" height="150" src="MEAN-Stack.png"/></div>
+<div align=center><img width="250" height="250" src="MEAN-Stack.png"/></div>
 
 <strong>MEAN<sup>2</sup></strong>  started out as a combination of
 
