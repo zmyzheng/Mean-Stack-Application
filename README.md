@@ -9,8 +9,7 @@ Visit this application:
 https://mean-stack-deployment.herokuapp.com/
 
 
-![](MEAN-Stack.png)
-
+<div align=center><img width="150" height="150" src="MEAN-Stack.png"/></div>
 
 <strong>MEAN<sup>2</sup></strong>  started out as a combination of
 
@@ -24,14 +23,13 @@ https://mean-stack-deployment.herokuapp.com/
 ## Run it
 
 Go to MeanFrontend directory, 
-    $ npm install
 
+    $ npm install
     $ ng build
 
 Copy the files in MeanFrontend/dist to MeanBackend/public
 
     $ npm install
-
     $ npm start
 
 ## Deployment
