@@ -24,3 +24,5 @@ npm install --save jsonwebtoken
 
 公用值型数据用localStorage
 
+外围component给子component传数据用属性绑定
+
