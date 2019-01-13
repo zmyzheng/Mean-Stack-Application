@@ -18,13 +18,27 @@ npm install --save bcryptjs
 npm install --save jsonwebtoken
 
 
-不同component之间通信用emit
+不同component之间通信用emit ：见新课程第23节 虽然例子有些不恰当，混合了外围component给子component传数据
+        ： 如创建message和list message的component之间，发送端用EventEmitter和@Output 
+        @Output是使外部能用这个变量
+        在post-create.component.ts中写
+        @Output() postCreated = new EventEmitter(); 
+        onAddPost() {this.postCreated.emit(post);}
+        app.component.ts接收它，在app.component.html中写：
+        <app-post-create (postCreated) = "addToPosts($event)"></app-post-create>
+        其中addToPosts(post)是app.component.ts中的方法
 
 有公用引用型数据用service
 
 公用值型数据用localStorage
 
 外围component给子component传数据用属性绑定
+    见新课程第23节 如：
+    post-list.component.ts写
+    @Input() posts = [];
+    在app.component.html中写
+    <app-post-list [posts]="storedPosts"></app-post-list>
+    storedPosts来自app.component.ts
 
 
 
