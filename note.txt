@@ -109,6 +109,7 @@ Routing:
 (1) app-routing.module.ts
 (2) routerLink = "/create"
 (3) routerLinkActive 高亮link
+(4) this.router.navigate(["/"]);
 
 
 获取路径信息：ActivedRoute，见post-create.component.ts区分add post和修改post
