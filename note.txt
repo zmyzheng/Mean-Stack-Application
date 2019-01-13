@@ -63,6 +63,10 @@ form 的两种写法：
 onSubmitForm() {
     send(post);
 }
+
+好处是可以给它赋初值，因为ngModel只是注册成一个control，[ngModel] = "post.tittle"就可以赋值了，是否要小括号待研究
+
+解决field没有初值时post.tittle报类似空指针异常的问题，可以用post?.tittle
 -------------
 <form (submit)="onSubmitForm(postForm)"  #postForm="ngForm">
     <input name="tittle" ngModel>
@@ -79,6 +83,8 @@ onSubmitForm(form: NgForm) {
     send(post);
 } 
 好处是可以this.form.reset();
+--------------
+
 -------------------------------------------------------------------------------------
 
 constructor中的 postService 必须要是public的才会创建field
@@ -93,3 +99,26 @@ constructor中的 postService 必须要是public的才会创建field
 一个好的习惯是获取posts对象的class不应该能操纵对象，所以不应该把引用的值传给获取posts的对象，而应该给它提供一个深拷贝return [...this.posts]; 见27节，
 然后就要解决一个问题，posts更新之后如何让获取posts的对象(post-list)知道，方法是需要用到Observable和Subject。见27节
 但这种方法的问题是当订阅它的对象不在DOM中后还在订阅，导致内存泄漏，解决方法是建立一个Subscription对象，当不在DOM中时（onDistroy)取消订阅，见27节最后的部分
+
+for all built-in observables, we never need to unsubscribe
+如this.route.paramMap.subscribe
+
+-------------------------------------------------------------------------------------
+
+Routing:
+(1) app-routing.module.ts
+(2) routerLink = "/create"
+(3) routerLinkActive 高亮link
+
+
+获取路径信息：ActivedRoute，见post-create.component.ts区分add post和修改post
+这时routerLink要写成[routerLink]以使得这个路径能被component内获取到，见post-list.component.html中的[routerLink]="['/edit', post.id]"
+
+
+
+
+-------------------------------------------------------------------------------------
+如果ts中的field需要被HTML访问，不能是private的，如果什么都不写默认是public的
+
+
+
