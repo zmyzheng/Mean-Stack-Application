@@ -78,7 +78,7 @@ onSubmitForm(form: NgForm) {
     }
     send(post);
 } 
-
+好处是可以this.form.reset();
 -------------------------------------------------------------------------------------
 
 constructor中的 postService 必须要是public的才会创建field
