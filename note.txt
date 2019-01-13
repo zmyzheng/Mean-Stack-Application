@@ -17,12 +17,13 @@ npm install --save bcryptjs
 
 npm install --save jsonwebtoken
 
-
-不同component之间通信用emit ：见新课程第23节 虽然例子有些不恰当，混合了外围component给子component传数据
+-------------------------------------------------------------------------------------
+不同component之间通信用emit ：
+见新课程第23节 虽然例子有些不恰当，混合了外围component给子component传数据
         ： 如创建message和list message的component之间，发送端用EventEmitter和@Output 
         @Output是使外部能用这个变量
         在post-create.component.ts中写
-        @Output() postCreated = new EventEmitter(); 
+        @Output() postCreated = new EventEmitter<Post>(); 
         onAddPost() {this.postCreated.emit(post);}
         app.component.ts接收它，在app.component.html中写：
         <app-post-create (postCreated) = "addToPosts($event)"></app-post-create>
@@ -40,7 +41,40 @@ npm install --save jsonwebtoken
     <app-post-list [posts]="storedPosts"></app-post-list>
     storedPosts来自app.component.ts
 
-
+------------------------------------------------------------------------------------
 
 These are the core template binding features angular has, event binding, string interpolation, property binding and two-way binding.
 
+------------------------------------------------------------------------------------
+
+model用interface，定义格式但不能被初始化,初始化还用大括号的形式
+
+-------------------------------------------------------------------------------------
+
+form 的两种写法：
+（type="submit"的button会trigger一个submit Event）
+(可以加required在input中，这是HTML5的特性，与Angular无关)
+
+<form (submit)="onSubmitForm()">
+    <input name="tittle" [(ngModel)] = "post.tittle">
+    <button type="submit"></button>
+</form>
+
+onSubmitForm() {
+    send(post);
+}
+-------------
+<form (submit)="onSubmitForm(postForm)"  #postForm="ngForm">
+    <input name="tittle" ngModel>
+    <button type="submit"></button>
+</form>
+
+onSubmitForm(form: NgForm) {
+    if(form.invalid) {
+    return;
+    }
+    const post: Post = {
+        title: form.value.title
+    }
+    send(post);
+} 
