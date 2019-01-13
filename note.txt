@@ -26,3 +26,7 @@ npm install --save jsonwebtoken
 
 外围component给子component传数据用属性绑定
 
+
+
+These are the core template binding features angular has, event binding, string interpolation, property binding and two-way binding.
+
